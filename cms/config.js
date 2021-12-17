@@ -9,6 +9,82 @@ export default {
   public_folder: 'img',
   collections: [
     {
+      name: "Blogs",
+      label: "Blogs",
+      editor: { preview: false },
+      label_singular: "Blog",
+      folder: "content/thoughtpiece",
+      create: true,
+      slug: "{{slug}}",
+      extension: "md",
+      format: "yaml-frontmatter",
+      fields: [
+        {
+          label: "Title/slug",
+          name: "title",
+          widget: "string",
+          required: true,
+        },
+        {
+          label: "Builder",
+          name: "builder",
+          widget: "list",
+          types: [
+            {
+              label: "Header Image",
+              name: "header",
+              widget: "object",
+              fields: [
+                {
+                  label: "Title",
+                  name: "title",
+                  widget: "string",
+                  required: true,
+                },
+                {
+                  label: "Background Image",
+                  name: "photo",
+                  widget: "image",
+                  required: true,
+                  media_library: { config: { multiple: false } },
+                },
+              ],
+            },
+            {
+              label: "CTA Section",
+              name: "cta",
+              widget: "object",
+              fields: [
+                {
+                  label: "Title",
+                  name: "title",
+                  widget: "string",
+                  required: true,
+                },
+                {
+                  label: "Link",
+                  name: "link",
+                  widget: "string",
+                },
+              ],
+            },
+            {
+              label: "Content",
+              name: "content",
+              widget: "object",
+              fields: [
+                {
+                  name: "Content",
+                  widget: "markdown",
+                  required: false,
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    {
       name: 'pages',
       label: 'Pages',
       files: [
