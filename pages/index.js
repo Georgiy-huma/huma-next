@@ -24,7 +24,7 @@ export default function Home({ content }) {
   // console.log('attr', attributes)
 
   return (
-    <div ref={ref} className={styles.container}>
+    <div ref={ref}>
       <GradientBackground height={height} />
       <Head>
         <title>Huma Next</title>
