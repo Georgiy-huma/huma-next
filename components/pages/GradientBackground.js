@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react'
-// import { children } from '../../propTypes'
+import React from 'react'
 import { number } from 'prop-types'
 
 import classes from './GradientBackground.module.scss'
@@ -21,14 +20,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink"
 */
 
 const GradientBackground = ({ children, height }) => { // children??
-
-  // const [ height, setHeight ] = useState(0)
-  // const ref = useRef(null)
-
-  useEffect(() => {
-    // setHeight(ref.current.clientHeight)
-    console.log('SVG height', height)
-  }, [ height ])
 
   const currentHeight = {
     height: height + 'px'
