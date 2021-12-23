@@ -1,6 +1,9 @@
+import { useState, useRef, useEffect } from 'react'
+
 import Link from 'next/link'
 import Head from 'next/head'
-import Image from 'next/image'
+// import Image from 'next/image'
+import GradientBackground from '../components/pages/GradientBackground'
 import styles from '../styles/Home.module.css'
 
 export const getStaticProps = async () => {
@@ -11,10 +14,18 @@ export const getStaticProps = async () => {
 export default function Home({ content }) {
   const { attributes } = content
 
+  const [ height, setHeight ] = useState(0)
+  const ref = useRef(null)
+
+  useEffect(() => {
+    setHeight(ref.current.clientHeight)
+  }, [])
+
   // console.log('attr', attributes)
 
   return (
-    <div className={styles.container}>
+    <div ref={ref} className={styles.container}>
+      <GradientBackground height={height} />
       <Head>
         <title>Huma Next</title>
         <meta name="description" content="Huma Next.js and headless CMS demo" />
