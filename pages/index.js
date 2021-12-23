@@ -36,8 +36,10 @@ export default function Home({ content }) {
         <h1>{attributes.hero_title}</h1>
         <p>{attributes.hero_description}</p>
 
-        <Link href="/admin">Login as admin</Link>
-        <Link href="/news-and-publications">News and publications page</Link>
+        <div className={styles.btnContainer}>
+          <Link href="/admin">Login as admin</Link>
+          <Link href="/news-and-publications">News and publications page</Link>
+        </div>
       </main>
 
       {/* <footer className={styles.footer}>
