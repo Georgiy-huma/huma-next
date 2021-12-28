@@ -6,10 +6,8 @@ import GradientBackground from '../components/pages/GradientBackground'
 
 import styles from '../styles/pages/news-and-publications.module.scss'
 
-export default function NewsAndPubs({ blogsHome, listOfBlogs }) {
+export default function NewsAndPubs({ /* blogsHome, */ listOfBlogs }) {
 
-  // console.log(listOfBlogs)
-  
   const listItems = listOfBlogs.map((item) =>
     <article
       key={item.title}
@@ -62,7 +60,7 @@ export async function getStaticProps() {
 
   const files = fs.readdirSync('content/thoughtpiece')
 
-  const blogsHome = getBySlug('content/pages', 'news-and-publications')
+  // const blogsHome = getBySlug('content/pages', 'news-and-publications')
 
   const listOfBlogs = []
 
@@ -72,7 +70,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      blogsHome,
+      // blogsHome,
       listOfBlogs
     }
   }

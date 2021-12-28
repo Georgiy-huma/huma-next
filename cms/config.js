@@ -10,6 +10,7 @@ export default {
   collections: [
     {
       name: "Blogs",
+      identifier_field: "slug",
       label: "Blogs",
       editor: { preview: false },
       label_singular: "Blog",
@@ -20,8 +21,14 @@ export default {
       format: "yaml-frontmatter",
       fields: [
         {
-          label: "Title/slug",
+          label: "Title",
           name: "title",
+          widget: "string",
+          required: true,
+        },
+        {
+          label: "Slug",
+          name: "slug",
           widget: "string",
           required: true,
         },
