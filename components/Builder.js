@@ -18,6 +18,7 @@ const components = {
 
 export default function Builder(props) {
   const Component = components[props.type]
+  console.log('[builder.js]', Component)
 
   return <Component item={props.item} />
 }
