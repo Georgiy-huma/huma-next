@@ -21,14 +21,20 @@ export default {
       format: "yaml-frontmatter",
       fields: [
         {
-          label: "Title",
+          label: "Short Title",
           name: "title",
           widget: "string",
           required: true,
         },
         {
-          label: "Slug",
+          label: "URL (Slug)",
           name: "slug",
+          widget: "string",
+          required: true,
+        },
+        {
+          label: "Meta description",
+          name: "metaDescr",
           widget: "string",
           required: true,
         },
@@ -37,7 +43,7 @@ export default {
           name: "builder",
           widget: "list",
           types: [
-            {
+            /* {
               label: "Header Image",
               name: "header",
               widget: "object",
@@ -56,8 +62,50 @@ export default {
                   media_library: { config: { multiple: false } },
                 },
               ],
-            },
+            }, */
             {
+              label: "Post header",
+              name: "postHeader",
+              widget: "object",
+              fields: [
+                {
+                  label: "Header",
+                  name: "header",
+                  widget: "string",
+                  required: true,
+                },
+                {
+                  label: "Sub-header",
+                  name: "subHeader",
+                  widget: "string",
+                  required: true,
+                },
+                {
+                  label: "Author",
+                  name: "author",
+                  widget: "string",
+                  required: true,
+                },
+                {
+                  label: "Minutes to read",
+                  name: "minToRead",
+                  widget: "string",
+                  required: true,
+                },
+                {
+                  label: "Publish date",
+                  name: "publishDate",
+                  widget: "string",
+                  required: true,
+                },
+                /* {
+                  label: "Link",
+                  name: "link",
+                  widget: "string",
+                }, */
+              ],
+            },
+            /* {
               label: "CTA Section",
               name: "cta",
               widget: "object",
@@ -74,7 +122,7 @@ export default {
                   widget: "string",
                 },
               ],
-            },
+            }, */
             {
               label: "Content",
               name: "content",

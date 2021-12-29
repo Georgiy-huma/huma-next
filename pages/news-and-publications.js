@@ -4,38 +4,11 @@ import { join } from 'path'
 import matter from 'gray-matter'
 import GradientBackground from '../components/pages/GradientBackground'
 
-import Builder from '../components/Builder'
-
 import styles from '../styles/pages/news-and-publications.module.scss'
 
 export default function NewsAndPubs({ /* blogsHome, */ listOfBlogs }) {
 
-  // console.log('listOfBlogs', listOfBlogs)
-
-  const elementsToRender = []
-
-  
-  for (let post of listOfBlogs) {
-    // console.log('Post', post.builder)
-    // const entry = []
-
-
-    // const [ data ] = post.builder
-    for (let item of post.builder) {
-      const result = Builder({ id: post.slug, type: item.type, item })
-      // console.log('Result', result)
-
-      // entry.push(result)
-      elementsToRender.push(result)
-
-    }
-
-    console.log('elementsToRender', elementsToRender[0])
-  }
-
-  // console.log('Array of posts', elementsToRender)
-
-/*   const listItems = listOfBlogs.map((item) =>
+  const listItems = listOfBlogs.map((item) =>
     <article
       key={item.title}
       className={styles.blogPost}
@@ -55,7 +28,7 @@ export default function NewsAndPubs({ /* blogsHome, */ listOfBlogs }) {
         2 Nov 2021 | 3 min read
       </p>
     </article>
-  ) */
+  )
 
   const [ height, setHeight ] = useState(1000)
   const ref = useRef(null)
@@ -68,14 +41,7 @@ export default function NewsAndPubs({ /* blogsHome, */ listOfBlogs }) {
     <GradientBackground height={height} />
     <h1 style={{ margin: '0', textAlign: 'center', paddingTop: '10rem' }}>Join the conversation</h1>
     <div className={styles.container}>
-      {elementsToRender}
-      {/* {listItems} */}
-      {/* {elementsToRender.length && elementsToRender.map(element => {
-        <p>11
-        {element}
-        </p>
-      })} */}
-      {/* entry */}
+      {listItems}
     </div>
   </main>
 }
