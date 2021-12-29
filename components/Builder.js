@@ -3,7 +3,8 @@ function BackgroundImage({ item }) {
 }
 
 function Content({ item }) {
-  return <div>{item.content}</div>
+  console.log('Content', item)
+  return <div>{item.Content}</div>
 }
 
 function Cta({ item }) {
@@ -16,9 +17,10 @@ const components = {
   cta: Cta
 }
 
-export default function Builder(props) {
+export default function Builder(props) { // type and item
+  // console.log('Builder props.item', props.item)
   const Component = components[props.type]
-  console.log('[builder.js]', Component)
+  // console.log('[builder.js]', Component)
 
-  return <Component item={props.item} />
+  return <Component key={props.id} item={props.item} />
 }
