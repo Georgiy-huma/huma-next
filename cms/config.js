@@ -39,103 +39,39 @@ export default {
           required: true,
         },
         {
-          label: "Builder",
-          name: "builder",
-          widget: "list",
-          types: [
-            /* {
-              label: "Header Image",
-              name: "header",
-              widget: "object",
-              fields: [
-                {
-                  label: "Title",
-                  name: "title",
-                  widget: "string",
-                  required: true,
-                },
-                {
-                  label: "Background Image",
-                  name: "photo",
-                  widget: "image",
-                  required: true,
-                  media_library: { config: { multiple: false } },
-                },
-              ],
-            }, */
-            {
-              label: "Post header",
-              name: "postHeader",
-              widget: "object",
-              fields: [
-                {
-                  label: "Header",
-                  name: "header",
-                  widget: "string",
-                  required: true,
-                },
-                {
-                  label: "Sub-header",
-                  name: "subHeader",
-                  widget: "string",
-                  required: true,
-                },
-                {
-                  label: "Author",
-                  name: "author",
-                  widget: "string",
-                  required: true,
-                },
-                {
-                  label: "Minutes to read",
-                  name: "minToRead",
-                  widget: "string",
-                  required: true,
-                },
-                {
-                  label: "Publish date",
-                  name: "publishDate",
-                  widget: "string",
-                  required: true,
-                },
-                /* {
-                  label: "Link",
-                  name: "link",
-                  widget: "string",
-                }, */
-              ],
-            },
-            /* {
-              label: "CTA Section",
-              name: "cta",
-              widget: "object",
-              fields: [
-                {
-                  label: "Title",
-                  name: "title",
-                  widget: "string",
-                  required: true,
-                },
-                {
-                  label: "Link",
-                  name: "link",
-                  widget: "string",
-                },
-              ],
-            }, */
-            {
-              label: "Content",
-              name: "content",
-              widget: "object",
-              fields: [
-                {
-                  name: "Content",
-                  widget: "markdown",
-                  required: false,
-                },
-              ],
-            },
-          ],
+          label: "Header",
+          name: "header",
+          widget: "string",
+          required: true,
+        },
+        {
+          label: "Sub-header",
+          name: "subHeader",
+          widget: "string",
+          required: true,
+        },
+        {
+          label: "Author",
+          name: "author",
+          widget: "string",
+          required: true,
+        },
+        {
+          label: "Minutes to read",
+          name: "minToRead",
+          widget: "string",
+          required: true,
+        },
+        {
+          label: "Publish date",
+          name: "publishDate",
+          widget: "string",
+          required: true,
+        },
+        {
+          label: 'Post content',
+          name: 'postContent',
+          widget: 'markdown',
         },
       ],
     },
@@ -150,12 +86,12 @@ export default {
           fields: [
             {
               label: 'Hero Title',
-              name: 'hero_title',
+              name: 'heroTitle',
               widget: 'string',
             },
             {
               label: 'Hero Description',
-              name: 'hero_description',
+              name: 'heroDescription',
               widget: 'markdown',
             }
           ]
