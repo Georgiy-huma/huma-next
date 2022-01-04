@@ -3,18 +3,28 @@ import fs from 'fs'
 
 const Post = ({ postData }) => { //thoughtpiece
 
-  const { header, subHeader, author, publishDate, minToRead, postContent} = postData
+
+  console.log('POST DATA', postData)
+
+
+  // const { header, subHeader, author, publishDate, minToRead, postContent} = postData
+
 
   return <>
-    <span>BLOG</span>
-    <h1>{header}</h1>
-    <h2>{subHeader}</h2>
-    <p>First published: {publishDate} | {minToRead} min read</p>
-    <hr />
-    <span><b>Author:</b> {author}</span>
-    <p>
-      {postContent}
-    </p>
+  {postData
+    ?<>
+      <span>BLOG</span>
+      <h1>{postData.header}</h1>
+      <h2>{postData.subHeader}</h2>
+      <p>First published: {postData.publishDate} | {postData.minToRead} min read</p>
+      <hr />
+      <span><b>Author:</b> {postData.author}</span>
+      <p>
+        {postData.postContent}
+      </p>
+    </>
+    : <>Empty post</>
+  }
   </>
 }
 
@@ -22,7 +32,7 @@ export async function getStaticPaths() {
 
   const files = fs.readdirSync('content/thoughtpiece')
 
-  console.log('Files!', files)
+  // console.log('Files!', files)
 
   const listOfPaths = []
 
@@ -44,13 +54,17 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
 
-  console.log(params)
+  const { slug } = params
 
-  const data = getBySlug('content/thoughtpiece', 'sometesttitle')
+  console.log('Params! SLUG', slug)
+
+  const postData = getBySlug('content/thoughtpiece', slug)
+
+  console.log('DATA----------', postData)
 
   return {
     props: {
-      postData: data
+      postData
     }
   }
 }
