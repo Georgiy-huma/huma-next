@@ -1,33 +1,44 @@
 import { useState, useRef, useEffect } from 'react'
 import fs from 'fs'
-import { join } from 'path'
-import matter from 'gray-matter'
 import GradientBackground from '../components/pages/GradientBackground'
+import Image from 'next/image'
+import { getBySlug } from '../lib'
+import Link from 'next/link'
 
 import styles from '../styles/pages/news-and-publications.module.scss'
 
-export default function NewsAndPubs({ /* blogsHome, */ listOfBlogs }) {
+export default function NewsAndPubs({listOfBlogs }) {
 
   const listItems = listOfBlogs.map((item) =>
-    <article
-      key={item.title}
-      className={styles.blogPost}
-    >
-      <p>blog</p>
+  <Link
+    key={item.slug}
+    href={`thoughtpiece/${item.slug}`}
+    passHref
+  >
+      <article
+        className={styles.blogPost}
+      >
+        <div className={styles.headerContainer}>
+          <span>BLOG</span>
+          <Image
+            src="/img/huma-logo.svg"
+            height={40}
+            width={40}
+            alt="Huma logo icon."
+          />
+        </div>
 
-      <h2>{item.title}</h2>
+        <h2>{item.header}</h2>
 
-      <p>
-        {item.builder && item.builder.length
-         ? <>{item.builder[0].Content}</> // fix this
-         : <>DEFAULT CONTENT</>
-         }
-      </p>
+        <p>
+          {item.subHeader}
+        </p>
 
-      <p>
-        2 Nov 2021 | 3 min read
-      </p>
-    </article>
+        <p>
+          {item.publishDate} | {item.minToRead} min read
+        </p>
+      </article>
+    </Link>
   )
 
   const [ height, setHeight ] = useState(1000)
@@ -46,22 +57,8 @@ export default function NewsAndPubs({ /* blogsHome, */ listOfBlogs }) {
   </main>
 }
 
-function getBySlug(dir, slug) {
-  const realSlug = slug.replace(/\.md$/, '')
-  const fullPath = join(dir, `${realSlug}.md`)
-  const fileContents = fs.readFileSync(fullPath, 'utf8')
-  const { data } = matter(fileContents)
-
-  return data
-}
-
-
 export async function getStaticProps() {
-
   const files = fs.readdirSync('content/thoughtpiece')
-
-  // const blogsHome = getBySlug('content/pages', 'news-and-publications')
-
   const listOfBlogs = []
 
   for (let file of files) {
@@ -70,7 +67,6 @@ export async function getStaticProps() {
 
   return {
     props: {
-      // blogsHome,
       listOfBlogs
     }
   }

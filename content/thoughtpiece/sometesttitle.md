@@ -2,12 +2,12 @@
 title: Some test title
 slug: sometesttitle
 metaDescr: Meta descr
-header: Test header
-subHeader: Test sub header
+header: How can digital solutions empower and support heart failure patients?
+subHeader: We launched a 12-week remote patient monitoring pilot with Cwm Taf and Betsi Cadwaladr University Health Boards
 author: Huma Tester
 minToRead: "3"
 publishDate: 4 Jan 2022
-hero_description: "**Clinical** trials are a critical, but challenging,
+postContent: "**Clinical** trials are a critical, but challenging,
   necessity in providing healthcare to patients. They are often expensive,
   difficult for patients to access, and limited in their cohort diversity.
   Additionally, there is often a gap in the continuation of care as patients
