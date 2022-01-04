@@ -12,7 +12,7 @@ export default function NewsAndPubs({listOfBlogs }) {
   const listItems = listOfBlogs.map((item) =>
   <Link
     key={item.slug}
-    href={`thoughtpiece/${item.slug}`}
+    href={`/thoughtpiece/${item.slug}`}
     passHref
   >
       <article

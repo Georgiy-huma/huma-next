@@ -20,9 +20,12 @@ const Post = ({ postData }) => { //thoughtpiece
 }
 
 export async function getServerSideProps(context) {
+
+  const data = getBySlug('content/thoughtpiece', context.query.slug)
+
   return {
     props: {
-      postData: getBySlug('content/thoughtpiece', context.query.slug)
+      postData: data
     }
   }
 }
