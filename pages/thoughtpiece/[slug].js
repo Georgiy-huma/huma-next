@@ -1,4 +1,3 @@
-import ReactMarkdown from "react-markdown"
 import { getBySlug } from '../../lib'
 
 
@@ -13,9 +12,9 @@ const Post = ({ postData }) => { //thoughtpiece
     <p>First published: {publishDate} | {minToRead} min read</p>
     <hr />
     <span><b>Author:</b> {author}</span>
-    <ReactMarkdown>
+    <p>
       {postContent}
-    </ReactMarkdown>
+    </p>
   </>
 }
 
