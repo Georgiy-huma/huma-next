@@ -1,3 +1,8 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b3e49791-e810-4136-a5ad-73b9cee8f236/deploy-status)](https://app.netlify.com/sites/huma-next/deploys)
+
+https://huma-next.netlify.app/
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
