@@ -14,3 +14,20 @@ a {
 * {
   box-sizing: border-box;
 }
+
+h1, h2 {
+  color: #2F3033; /* huma-grey */
+  letter-spacing: .2px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 300;
+}
+
+h1 {
+  font-size: 48px;
+  line-height: 64px;
+}
+
+h2 {
+  font-size: 30px;
+  line-height: 40px;
+}
