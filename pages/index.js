@@ -33,8 +33,8 @@ export default function Home({ content }) {
       </Head>
 
       <main className={styles.main}>
-        <h1>{attributes.hero_title}</h1>
-        <p>{attributes.hero_description}</p>
+        <h1>{attributes.heroTitle}</h1>
+        <p>{attributes.heroDescription}</p>
 
         <div className={styles.btnContainer}>
           <Link href="/admin">Login as admin</Link>
