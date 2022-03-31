@@ -1,8 +1,8 @@
 ---
 title: Second blog
-slug: second-blog-slug
+slug: secondblogslug
 metaDescr: Some meta descr
-header: "[Edit] Atos and Huma support Symbiosis Hospital to expand care capacity"
+header: Atos and Huma support Symbiosis Hospital to expand care capacity
 subHeader: Huma’s ‘hospital at home’ technology will expand care capacity in
   Pune, India by up to 60%
 author: Huma Tester
