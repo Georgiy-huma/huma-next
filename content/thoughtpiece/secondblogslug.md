@@ -1,6 +1,6 @@
 ---
 title: Second blog
-slug: secondblogslug
+slug: second-blog-slug
 metaDescr: Some meta descr
 header: "[Edit] Atos and Huma support Symbiosis Hospital to expand care capacity"
 subHeader: Huma’s ‘hospital at home’ technology will expand care capacity in
