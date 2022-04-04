@@ -16,7 +16,7 @@ const PostLayout = ({ post }) => {
 
   return <>
     {post
-      ? <section ref={ref} className={styles.mainSection} style={{ height: '100vh' }}>
+      ? <section ref={ref} className={styles.mainSection}>
       <GradientBackground height={height} />
       <article className={styles.postContainer}>
         <div className={styles.mainColumn}>

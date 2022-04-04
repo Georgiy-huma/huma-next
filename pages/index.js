@@ -36,10 +36,17 @@ export default function Home({ content }) {
         <h1>{attributes.heroTitle}</h1>
         <p>{attributes.heroDescription}</p>
 
-        <div className={styles.btnContainer}>
+        <section className={styles.btnContainer}>
           <Link href="/admin">Login as admin</Link>
           <Link href="/news-and-publications">News and publications page</Link>
-        </div>
+        </section>
+
+        <section className={styles.linksContainer}>
+          <a href="https://app.netlify.com/sites/huma-next/deploys?filter=main">
+            List of builds on netlify
+          </a>
+        </section>
+
       </main>
 
       {/* <footer className={styles.footer}>

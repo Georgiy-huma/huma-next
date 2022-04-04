@@ -14,17 +14,34 @@
 }
 
 .btnContainer > a {
-  border: 1px solid rgb(32, 32, 32);
-  padding: 1.3rem 2.3rem 1.5rem 2.3rem;
-  border-radius: 40px;
-  font-size: 1.5rem;
+  border: 1px solid #424347;
+  padding: 10px 24px;
+  border-radius: 17px;
+  font-size: 12px;
+  letter-spacing: 2px;
   margin: 0 2rem;
   transition: all .2s ease;
+  text-transform: uppercase;
 }
 
 .btnContainer > a:hover {
   border: 1px solid rgb(95, 95, 95);
   color: rgb(133, 133, 133);
+}
+
+.linksContainer {
+  margin-top: 50px;
+}
+
+.linksContainer > a {
+  font-size: 14px;
+  text-decoration: underline;
+  color: #424347;
+  transition: all .2s ease;
+}
+
+.linksContainer > a:hover {
+  color: #CECDD4;
 }
 
 .footer {

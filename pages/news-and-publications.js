@@ -48,7 +48,7 @@ export default function NewsAndPubs({listOfBlogs }) {
     setHeight(ref.current.clientHeight)
   }, [])
 
-  return <main ref={ref} style={{ height: '100vh' }}>
+  return <main ref={ref} className={styles.main}>
     <GradientBackground height={height} />
     <h1 style={{ margin: '0', textAlign: 'center', paddingTop: '10rem' }}>Join the conversation</h1>
     <div className={styles.container}>
