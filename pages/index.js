@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Head from 'next/head'
 // import Image from 'next/image'
 import GradientBackground from '../components/pages/GradientBackground'
+import NavBar from '../components/navbar/navbar'
 import styles from '../styles/Home.module.css'
 
 export const getStaticProps = async () => {
@@ -25,6 +26,7 @@ export default function Home({ content }) {
 
   return (
     <div ref={ref}>
+      <NavBar />
       <GradientBackground height={height} />
       <Head>
         <title>Huma Next</title>
