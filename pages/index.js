@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Head from 'next/head'
 // import Image from 'next/image'
 import GradientBackground from '../components/pages/GradientBackground'
-import NavBar from '../components/navbar/navbar'
+import NavBar from '../components/navbar/NavBar'
 import styles from '../styles/Home.module.css'
 
 export const getStaticProps = async () => {
