@@ -39,6 +39,7 @@
       margin: 0 26px;
       a {
         display: inherit;
+        cursor: pointer; // remove later
       }
       span {
         margin-right: 10px;
@@ -55,6 +56,10 @@
     .platformDropdown {
       display: block;
     }
+    img {
+      transition: transform .7s ease-out;
+      transform: rotate(-180deg);
+    }
   }
 }
 
@@ -67,6 +72,9 @@
   // background-color: pink;
   padding: 15px;
   width: 245px;
+  img {
+    transform: rotate(0deg) !important; // this! (( styling next/image is somehow problematic
+  }
   ul {
     text-transform: capitalize;
     display: flex;
@@ -88,5 +96,13 @@
         margin-bottom: 0;
       }
     }
+  }
+}
+
+.fadedOutLink {
+  color: rgb(143, 143, 143);
+  transition: color .5s ease-out;
+  &:hover {
+    color: black;
   }
 }
