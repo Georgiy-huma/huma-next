@@ -1,3 +1,4 @@
+@import 'mixins/media-queries';
 
 .main {
   min-height: 100vh;
@@ -9,8 +10,21 @@
   align-items: center;
 }
 
+.heroDescription {
+  text-align: center;
+  padding: 0 15px;
+  @include for-small-desktop-up {
+    padding: 0;
+  }
+}
+
 .btnContainer {
   margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  @include for-small-desktop-up {
+    flex-direction: row;
+  }
 }
 
 .btnContainer > a {
@@ -19,9 +33,10 @@
   border-radius: 17px;
   font-size: 12px;
   letter-spacing: 2px;
-  margin: 0 2rem;
+  margin: 10px;
   transition: all .2s ease;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .btnContainer > a:hover {
