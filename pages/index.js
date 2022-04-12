@@ -5,7 +5,7 @@ import Head from 'next/head'
 // import Image from 'next/image'
 import GradientBackground from '../components/pages/GradientBackground'
 import NavBar from '../components/navbar/NavBar'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.scss'
 
 export const getStaticProps = async () => {
   const content = await import(`../content/pages/${'home'}.md`)
@@ -36,7 +36,7 @@ export default function Home({ content }) {
 
       <main className={styles.main}>
         <h1>{attributes.heroTitle}</h1>
-        <p>{attributes.heroDescription}</p>
+        <p className={styles.heroDescription}>{attributes.heroDescription}</p>
 
         <section className={styles.btnContainer}>
           <Link href="/admin">Login as admin</Link>
