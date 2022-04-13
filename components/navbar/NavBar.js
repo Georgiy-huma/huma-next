@@ -44,10 +44,21 @@ const NavBar = () => {
   }
 
   const navbarClassNames = cx(styles.navbar, { [styles.open]: navBarOpen })
+  const hamburgerClassNames = cx(styles.hamburger, { [styles.hamburgerActive]: navBarOpen })
 
   return <nav className={navbarClassNames}>
     <div className={styles.humaLogo}>
-      <Link href='/'><a onClick={handleMobileNav}><HumaLogo /></a></Link>
+      <Link href='/'><a><HumaLogo /></a></Link>
+    </div>
+    <div className={styles.mobileMenuButton}>
+      <button
+        type="button"
+        className={styles.toggle}
+        onClick={handleMobileNav}
+      >
+        <span className={styles.visuallyHidden}>Menu</span>
+        <span className={hamburgerClassNames}></span>
+      </button>
     </div>
     <div className={styles.linksContainer}>
       <ul onMouseEnter={highlightLinks}

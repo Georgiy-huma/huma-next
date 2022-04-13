@@ -167,3 +167,80 @@
     color: black;
   }
 }
+// ---------------------------
+// hamburger menu
+// ---------------------------
+.mobileMenuButton {
+  display: flex;
+}
+
+.toggle {
+  background: none;
+  border: none;
+  position: absolute;
+  top: 25px;
+  right: 18px;
+
+  &:focus {
+    outline: none; //this!
+  }
+}
+
+.hamburger {
+  background: none;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  height: 2px;
+  width: 16px;
+  transform: translateY(-100%);
+
+  &:before,
+  &:after {
+    background-color: black;
+    color: black;
+    display: inline-block;
+    position: absolute;
+    right: 1px;
+    vertical-align: middle;
+    content: "";
+    height: 1px;
+    width: 16px;
+    transform-origin: 50% 50%;
+    transition: top 0.3s 0.6s ease, transform 0.3s ease, background-color 0.3s ease;
+  }
+
+  &:before {
+    top: -4px;
+  }
+
+  &:after {
+    top: 4px;
+  }
+}
+
+.hamburgerActive {
+  &::before,
+  &::after {
+    color: black;
+    transition: top 0.3s ease, transform 0.3s 0.5s ease, background-color 0.3s ease;
+    top: 0;
+  }
+  &:before {
+    transform: rotate3d(0, 0, 1, 45deg);
+  }
+  &:after {
+    transform: rotate3d(0, 0, 1, -45deg);
+  }
+}
+
+.visuallyHidden {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
