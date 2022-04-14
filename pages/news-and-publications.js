@@ -54,9 +54,9 @@ export default function NewsAndPubs({listOfBlogs }) {
     <NavBar />
     <GradientBackground height={height} />
     <h1 style={{ margin: '0', textAlign: 'center', paddingTop: '10rem' }}>Join the conversation</h1>
-    <div className={styles.container}>
+    <section className={styles.container}>
       {listItems}
-    </div>
+    </section>
   </main>
 }
 

@@ -16,25 +16,26 @@ export default function Home({ content }) {
   const { attributes } = content
 
   const [ height, setHeight ] = useState(0)
-  const ref = useRef(null)
+  const mainSectionRef = useRef(null)
 
   useEffect(() => {
-    setHeight(ref.current.clientHeight)
+    setHeight(mainSectionRef.current.clientHeight)
   }, [])
 
   // console.log('attr', attributes)
 
   return (
-    <div ref={ref}>
+    <>
       <NavBar />
       <GradientBackground height={height} />
       <Head>
         <title>Huma Next</title>
         <meta name="description" content="Huma Next.js and headless CMS demo" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="manifest" href="/site.webmanifest"/>
       </Head>
 
-      <main className={styles.main}>
+      <main ref={mainSectionRef} className={styles.main}>
         <h1>{attributes.heroTitle}</h1>
         <p className={styles.heroDescription}>{attributes.heroDescription}</p>
 
@@ -44,7 +45,10 @@ export default function Home({ content }) {
         </section>
 
         <section className={styles.linksContainer}>
-          <a href="https://app.netlify.com/sites/huma-next/deploys?filter=main">
+          <a
+            href="https://app.netlify.com/sites/huma-next/deploys?filter=main"
+            target="_blank"
+          >
             List of builds on netlify
           </a>
         </section>
@@ -63,6 +67,6 @@ export default function Home({ content }) {
           </span>
         </a>
       </footer> */}
-    </div>
+    </>
   )
 }
