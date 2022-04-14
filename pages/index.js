@@ -48,6 +48,7 @@ export default function Home({ content }) {
           <a
             href="https://app.netlify.com/sites/huma-next/deploys?filter=main"
             target="_blank"
+            rel="noopener noreferrer"
           >
             List of builds on netlify
           </a>
