@@ -124,10 +124,11 @@
   display: none;
   top: 67px;
   left: -80px;
-  padding: 15px;
+  padding: 15px 15px 0;
   width: 245px;
   @include for-small-desktop-up {
     position: absolute;
+    padding: 15px;
   }
 
   img {
@@ -142,19 +143,26 @@
     -webkit-box-shadow: 0px 1px 3px 1px rgba(221,221,221,1); // mixin
     -moz-box-shadow: 0px 1px 3px 1px rgba(221,221,221,1);
     box-shadow: 0px 1px 3px 1px rgba(221,221,221,1);
-    padding: 20px 0;
+    padding: 10px 0;
     border-radius: 14px;
+    @include for-small-desktop-up {
+      padding: 20px 0;
+      align-items: flex-start;
+    }
 
     li {
-      margin-bottom: 15px;
+      margin-bottom: 10px;
       font-size: 14px;
       line-height: 19.07px;
       font-weight: 300;
     }
 
-    li {
-      &:last-of-type {
-        margin-bottom: 0;
+    @include for-small-desktop-up {
+      li {
+        margin-bottom: 15px;
+        &:last-of-type {
+          margin-bottom: 0;
+        }
       }
     }
   }
@@ -166,4 +174,84 @@
   &:hover {
     color: black;
   }
+}
+// ---------------------------
+// hamburger menu
+// ---------------------------
+.mobileMenuButton {
+  display: flex;
+  @include for-small-desktop-up {
+    display: none;
+  }
+}
+
+.toggle {
+  background: none;
+  border: none;
+  position: absolute;
+  top: 25px;
+  right: 18px;
+
+  &:focus {
+    outline: none; //this!
+  }
+}
+
+.hamburger {
+  background: none;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  height: 2px;
+  width: 16px;
+  transform: translateY(-100%);
+
+  &:before,
+  &:after {
+    background-color: black;
+    color: black;
+    display: inline-block;
+    position: absolute;
+    right: 1px;
+    vertical-align: middle;
+    content: "";
+    height: 1px;
+    width: 16px;
+    transform-origin: 50% 50%;
+    transition: top 0.3s 0.6s ease, transform 0.3s ease, background-color 0.3s ease;
+  }
+
+  &:before {
+    top: -4px;
+  }
+
+  &:after {
+    top: 4px;
+  }
+}
+
+.hamburgerActive {
+  &::before,
+  &::after {
+    color: black;
+    transition: top 0.3s ease, transform 0.3s 0.5s ease, background-color 0.3s ease;
+    top: 0;
+  }
+  &:before {
+    transform: rotate3d(0, 0, 1, 45deg);
+  }
+  &:after {
+    transform: rotate3d(0, 0, 1, -45deg);
+  }
+}
+
+.visuallyHidden {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
