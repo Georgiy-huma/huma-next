@@ -4,6 +4,7 @@ import GradientBackground from '../components/pages/GradientBackground'
 import Image from 'next/image'
 import { getBySlug } from '../lib'
 import Link from 'next/link'
+import NavBar from '../components/navbar/NavBar'
 
 import styles from '../styles/pages/news-and-publications.module.scss'
 
@@ -19,12 +20,13 @@ export default function NewsAndPubs({listOfBlogs }) {
         className={styles.blogPost}
       >
         <div className={styles.headerContainer}>
-          <span>BLOG</span>
+          <span className={styles.postType}>BLOG</span>
           <Image
-            src="/img/huma-logo.svg"
-            height={40}
-            width={40}
+            src="/img/svg/blog-post-icon.svg"
+            height={24}
+            width={24}
             alt="Huma logo icon."
+            className={styles.blogIcon}
           />
         </div>
 
@@ -35,7 +37,7 @@ export default function NewsAndPubs({listOfBlogs }) {
         </p>
 
         <p>
-          {item.publishDate} | {item.minToRead} min read
+          {item.publishDate}
         </p>
       </article>
     </Link>
@@ -49,6 +51,7 @@ export default function NewsAndPubs({listOfBlogs }) {
   }, [])
 
   return <main ref={ref} className={styles.main}>
+    <NavBar />
     <GradientBackground height={height} />
     <h1 style={{ margin: '0', textAlign: 'center', paddingTop: '10rem' }}>Join the conversation</h1>
     <div className={styles.container}>

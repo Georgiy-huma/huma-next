@@ -32,7 +32,7 @@ const NavBar = () => {
   // const platformLinks = ['hospital at home', 'episodic care', 'chronic care']
 
   const highlightLinks = () => {
-    setLinkClassList([ styles.fadedOutLink ])
+    setLinkClassList([ styles.fadedOutLink ]) //?
   }
 
   const removeHighLight = () => {
