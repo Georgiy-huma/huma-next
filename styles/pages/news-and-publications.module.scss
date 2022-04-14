@@ -1,4 +1,5 @@
 @import '../mixins/media-queries';
+@import '../mixins/typography';
 
 .main {
   min-height: 100vh;
@@ -42,9 +43,7 @@
   }
 
   span.postType {
-    font-size: 12px;
-    line-height: 16px;
-    letter-spacing: 2px;
+    @include postType;
   }
 
   h2 {
