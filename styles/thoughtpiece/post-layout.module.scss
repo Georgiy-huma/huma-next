@@ -1,14 +1,33 @@
+@import '../mixins/media-queries';
+@import '../mixins/typography';
+
 .mainSection {
   display: flex;
-  min-height: 100vh;
 }
 
 .postContainer {
   display: flex;
 }
 
+.postType {
+  @include postType;
+}
+
+.postDateStamp {
+  @include postDateStamp;
+}
+
 .mainColumn {
-  margin: 10% 20% 0 20%;
+  margin: 180px 20px;
+  @include for-small-desktop-up {
+    margin: 10% 20% 0 20%;
+  }
+  h1, h2 {
+    text-align: left;
+  }
+  p {
+    font-family: 'Noto sans light', sans-serif;
+  }
 }
 
 .authorInfo {

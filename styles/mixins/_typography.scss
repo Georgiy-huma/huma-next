@@ -1,0 +1,12 @@
+@mixin postType {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 2px;
+}
+
+@mixin postDateStamp {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 1px;
+  color: #6A6D72;
+}

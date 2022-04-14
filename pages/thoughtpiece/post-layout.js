@@ -11,7 +11,7 @@ const PostLayout = ({ post }) => {
   const ref = useRef(null)
 
   useEffect(() => {
-    setHeight(ref.current.clientHeight) // this should be a custom hook
+    setHeight(ref.current?.clientHeight) // this should be a custom hook
   }, [])
 
   return <>
@@ -20,11 +20,11 @@ const PostLayout = ({ post }) => {
       <GradientBackground height={height} />
       <article className={styles.postContainer}>
         <div className={styles.mainColumn}>
-          <span>BLOG</span>
+          <span className={styles.postType}>BLOG</span>
           <h1>{post.header}</h1>
           <h2>{post.subHeader}</h2>
 
-          <p>First published: {post.publishDate} | {post.minToRead} min read</p>
+          <p className={styles.postDateStamp}>First published: {post.publishDate} | {post.minToRead} min read</p>
 
           <hr />
 
