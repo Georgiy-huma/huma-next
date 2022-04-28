@@ -2,7 +2,7 @@
 title: New title
 slug: sometesttitle
 metaDescr: Meta descr
-header: How can digital solutions empower and support heart failure patients?
+header: "[Edit] How can digital solutions empower and support heart failure patients?"
 subHeader: We launched a 12-week remote patient monitoring pilot with Cwm Taf
   and Betsi Cadwaladr University Health Boards
 author: Huma Tester
