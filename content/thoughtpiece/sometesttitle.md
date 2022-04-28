@@ -1,5 +1,5 @@
 ---
-title: Some test title
+title: New title
 slug: sometesttitle
 metaDescr: Meta descr
 header: How can digital solutions empower and support heart failure patients?
