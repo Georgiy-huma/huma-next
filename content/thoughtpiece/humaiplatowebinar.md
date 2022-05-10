@@ -3,7 +3,7 @@ title: "Webinar: Advancing digital-first delivery of care"
 slug: HumaiPLATOwebinar
 metaDescr: Huma and iPLATO (myGP) hosted a joint webinar on how we can bring
   digital-first care to patients at scale
-header: Completely different header
+header: "[EDIT] Webinar: Advancing digital-first delivery of care"
 subHeader: Huma and iPLATO (myGP) hosted a joint webinar on how we can bring
   digital-first care to patients at scale
 author: Huma tester
